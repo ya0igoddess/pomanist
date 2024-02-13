@@ -6,9 +6,12 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
-[dev-dependencies]
-sdl2 = "0.36"
+imagine = "0.5.1"
+bytemuck = "1.14.1"
+ultraviolet = "0.9.2"
 
 [dependencies.gl]
 git = "https://github.com/bjz/gl-rs"
+
+[dev-dependencies]
+sdl2 = "0.36"
