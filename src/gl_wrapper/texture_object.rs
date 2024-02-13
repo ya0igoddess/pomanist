@@ -45,20 +45,5 @@ impl Texture {
         Ok(())
     }
 
-    pub fn from_file(mut file: File) -> Result<Self, Error> {
-        let mut texture_object = Self::new();
-        let mut buffer = vec![];
-        texture_object.bind();
-        sgl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_WRAP_S, gl::REPEAT.try_into().unwrap());
-        sgl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_WRAP_T, gl::REPEAT.try_into().unwrap());
-        sgl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MIN_FILTER, gl::LINEAR.try_into().unwrap());
-        sgl::TexParameteri(gl::TEXTURE_2D, gl::TEXTURE_MAG_FILTER, gl::LINEAR.try_into().unwrap());
-        file.read_to_end(&mut buffer)?;
-        let bitmap_result = imagine::png::png_try_bitmap_rgba(&buffer, true);
-        if bitmap_result.is_err() {
-            return Err(std::io::Error::from(ErrorKind::InvalidData));
-        }
-        texture_object.load_bitmap(&bitmap_result.unwrap())?;
-        Ok(texture_object)
-    }
+
 }

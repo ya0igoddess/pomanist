@@ -1,7 +1,7 @@
 mod check_gl_errors;
-mod safe;
-mod array_object;
-mod buffer_object;
-mod shader_object;
-mod texture_object;
-mod program_object;
+pub mod safe;
+pub mod array_object;
+pub mod buffer_object;
+pub mod shader_object;
+pub mod texture_object;
+pub mod program_object;
