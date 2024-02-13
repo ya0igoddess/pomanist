@@ -1,5 +1,4 @@
-use std::fs::File;
-use std::io::{Error, ErrorKind, Read};
+use std::io::Error;
 
 use gl;
 use imagine::Bitmap;
