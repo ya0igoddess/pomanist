@@ -1,5 +1,6 @@
 pub mod gl_wrapper;
 pub mod texture_loaders;
+pub mod scene;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right
